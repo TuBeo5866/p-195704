@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 224 71.4% 4.1%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 220 65% 55%;
     --primary-foreground: 210 20% 98%;
 
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220 8.9% 46.1%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220 8.9% 46.1%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
 
     --radius: 0.75rem;
 
@@ -70,7 +70,7 @@
 
 @layer components {
   .glass {
-    @apply backdrop-blur-md bg-white/80 border border-white/20 shadow-glass;
+    @apply backdrop-blur-md bg-black/40 border border-white/10 shadow-glass;
   }
   
   .section-container {
@@ -94,7 +94,7 @@
   }
   
   .pill {
-    @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground transition-colors;
+    @apply inline-flex items-center rounded-full px-4 py-2 text-sm font-medium bg-secondary text-secondary-foreground transition-colors;
   }
   
   .body-lg {
@@ -112,6 +112,10 @@
   .section-title::after {
     content: "";
     @apply absolute left-0 -bottom-2 w-1/2 h-[2px] bg-primary;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent;
   }
 }
 

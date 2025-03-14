@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
       >
         <div className="flex flex-col space-y-6 justify-center">
           <div className="space-y-1 animate-fade-in-up">
-            <p className="pill animate-fade-in-up animate-delay-100">Hello, I'm</p>
+            <p className="pill animate-fade-in-up animate-delay-100">👋 Hi, I'm TuBeo58666</p>
             <h1 className="heading-xl animate-fade-in-up animate-delay-200">
               <AnimatedText 
                 text="Your Name"

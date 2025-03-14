@@ -62,7 +62,7 @@ const Header: React.FC = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 backdrop-blur-sm',
-        isScrolled ? 'bg-white/80 shadow-subtle' : 'bg-transparent'
+        isScrolled ? 'bg-muted shadow-subtle' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
               <span 
                 className={cn(
                   'absolute bottom-0 left-0 w-full h-[2px] transition-all duration-300 transform', 
-                  activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-transparent scale-x-0'
+                  activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
                 )}
               />
             </a>
@@ -116,7 +116,7 @@ const Header: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <div 
         className={cn(
-          'fixed inset-0 bg-background backdrop-blur-md flex flex-col items-center justify-center transition-all duration-300 md:hidden',
+          'fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-300 md:hidden',
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         )}
       >

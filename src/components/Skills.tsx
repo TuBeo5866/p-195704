@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import { 
   Paintbrush, Code, PenTool, Layers, Monitor, 
-  Box, LineChart, Lock, Users, Sparkles, Database, Terminal
+  Users, Shield, Gamepad2, Database, Terminal
 } from 'lucide-react';
 import SkillCard from './SkillCard';
 import { cn } from '@/lib/utils';
@@ -40,28 +40,28 @@ const Skills: React.FC = () => {
     {
       name: "Design",
       skills: [
-        { name: "UI Design", level: 5, icon: <Paintbrush size={24} /> },
-        { name: "UX Design", level: 4, icon: <Users size={24} /> },
-        { name: "Visual Design", level: 5, icon: <PenTool size={24} /> },
-        { name: "Wireframing", level: 4, icon: <Layers size={24} /> },
+        { name: "UI Design", level: 9, icon: <Paintbrush size={24} /> },
+        { name: "UX Design", level: 8, icon: <Users size={24} /> },
+        { name: "Visual Design", level: 7, icon: <PenTool size={24} /> },
+        { name: "Wireframing", level: 8, icon: <Layers size={24} /> },
       ]
     },
     {
       name: "Development",
       skills: [
-        { name: "JavaScript", level: 5, icon: <Code size={24} /> },
-        { name: "React", level: 5, icon: <Box size={24} /> },
-        { name: "TypeScript", level: 4, icon: <Terminal size={24} /> },
-        { name: "Node.js", level: 3, icon: <Database size={24} /> },
+        { name: "C++", level: 10, icon: <Code size={24} /> },
+        { name: "Python", level: 9, icon: <Terminal size={24} /> },
+        { name: "JavaScript", level: 8, icon: <Database size={24} /> },
+        { name: "HTML, CSS", level: 8, icon: <Monitor size={24} /> },
       ]
     },
     {
       name: "Other",
       skills: [
-        { name: "Responsive Design", level: 5, icon: <Monitor size={24} /> },
-        { name: "Data Visualization", level: 3, icon: <LineChart size={24} /> },
-        { name: "Web Accessibility", level: 4, icon: <Lock size={24} /> },
-        { name: "Animation", level: 4, icon: <Sparkles size={24} /> },
+        { name: "Managing", level: 9, icon: <Users size={24} /> },
+        { name: "Reviewing", level: 8, icon: <PenTool size={24} /> },
+        { name: "Network Security", level: 9, icon: <Shield size={24} /> },
+        { name: "Gaming - Player", level: 10, icon: <Gamepad2 size={24} /> },
       ]
     }
   ];

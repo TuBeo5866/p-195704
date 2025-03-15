@@ -5,11 +5,14 @@ import { cn } from '@/lib/utils';
 interface SkillCardProps {
   icon: React.ReactNode;
   name: string;
-  level: number; // 1-5
+  level: number; // 1-10
   className?: string;
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ icon, name, level, className }) => {
+  // Converting the 10-point scale to a 5-segment visual display
+  const normalizedLevel = Math.ceil(level / 2);
+  
   return (
     <div 
       className={cn(
@@ -21,15 +24,18 @@ const SkillCard: React.FC<SkillCardProps> = ({ icon, name, level, className }) =
         {icon}
       </div>
       <div className="flex-1">
-        <h4 className="font-medium text-foreground">{name}</h4>
+        <div className="flex justify-between">
+          <h4 className="font-medium text-foreground">{name}</h4>
+          <span className="text-sm text-muted-foreground">{level}/10</span>
+        </div>
         <div className="flex space-x-1 mt-1">
           {Array.from({ length: 5 }).map((_, i) => (
             <div 
               key={i}
               className={cn(
                 "h-1 w-6 rounded-full transition-all duration-500",
-                i < level ? "bg-primary" : "bg-muted",
-                i < level && "group-hover:bg-primary/80"
+                i < normalizedLevel ? "bg-primary" : "bg-muted",
+                i < normalizedLevel && "group-hover:bg-primary/80"
               )}
             />
           ))}

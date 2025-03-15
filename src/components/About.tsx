@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Code, Lightbulb, PenTool, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -85,7 +84,7 @@ const About: React.FC = () => {
           <FeatureCard 
             icon={<Code size={24} />}
             title="Development"
-            description="Best maintainable applications with C++, Python, JavaScript and Tailwind CSS languages."
+            description="4 years. Best maintainable applications with C++, Python, JavaScript and Tailwind CSS languages."
             className="animate-on-scroll"
           />
           <FeatureCard 

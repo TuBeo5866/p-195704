@@ -30,7 +30,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ icon, name, level, className }) =
             <div 
               key={i}
               className={cn(
-                "h-1 w-2.5 rounded-full transition-all duration-500",
+                "h-1.5 w-4 rounded-full transition-all duration-500",
                 i < level ? "bg-primary" : "bg-muted",
                 i < level && "group-hover:bg-primary/80"
               )}

@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           </div>
           
           <p className="body-lg text-muted-foreground max-w-lg mx-auto animate-fade-in-up animate-delay-400">
-            Creating minimal and delightful digital experiences through thoughtful design and clean code. Focused on crafting beautiful, functional interfaces that people love to use.
+            I'm a software engineer specializing in full-stack development, creating robust and scalable applications and games.
           </p>
           
           <div className="flex gap-4 pt-2 justify-center animate-fade-in-up animate-delay-500">

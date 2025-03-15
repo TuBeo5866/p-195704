@@ -79,13 +79,13 @@ const About: React.FC = () => {
           <FeatureCard 
             icon={<PenTool size={24} />}
             title="Design"
-            description="Thoughtful UI/UX design with a focus on usability, aesthetics, and attention to detail."
+            description="3 years. Thoughtful UI/UX design with a focus on usability, aesthetics, and attention to detail."
             className="animate-on-scroll"
           />
           <FeatureCard 
             icon={<Code size={24} />}
             title="Development"
-            description="Clean, efficient code with modern frameworks and best practices for maintainable applications."
+            description="Best maintainable applications with C++, Python, JavaScript and Tailwind CSS languages."
             className="animate-on-scroll"
           />
           <FeatureCard 

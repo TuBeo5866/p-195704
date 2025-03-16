@@ -98,7 +98,7 @@ const Header: React.FC = () => {
                   'absolute bottom-0 left-0 right-0 mx-auto w-1/2 h-[2px] transition-all duration-300 transform', 
                   activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
                 )}
-                style={{ left: '25%' }} {/* Center the underline */}
+                style={{ left: '25%' }} /* Center the underline */
               />
             </a>
           ))}

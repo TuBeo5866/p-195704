@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import { 
   Mail, 
@@ -99,7 +98,7 @@ const Contact: React.FC = () => {
       href: "https://x.com/tubeo5866" 
     },
     { 
-      icon: <ExternalLink size={20} className="rotate-45" />, 
+      icon: <Cloud size={20} className="rotate-45" />, 
       label: "Bluesky", 
       href: "https://bsky.app/profile/tubeo5866.bsky.app" 
     },
@@ -114,7 +113,7 @@ const Contact: React.FC = () => {
       href: "https://facebook.com/TuBeo58666" 
     },
     { 
-      icon: <ExternalLink size={20} className="rotate-180" />, 
+      icon: <MessageSquare size={20} className="rotate-180" />, 
       label: "Reddit", 
       href: "https://www.reddit.com/user/Infinite-Science96" 
     },

@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
     },
     { 
       name: 'Bluesky',
-      icon: <ExternalLink size={18} className="rotate-45" />, // Butterfly-like appearance
+      icon: <Cloud size={18} className="rotate-45" />, // Better butterfly-like appearance
       href: 'https://bsky.app/profile/tubeo5866.bsky.app',
     },
     { 
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
     },
     { 
       name: 'Reddit',
-      icon: <ExternalLink size={18} className="rotate-180" />, // Reddit-like appearance
+      icon: <MessageSquare size={18} className="rotate-180" />, // More Reddit-like appearance
       href: 'https://www.reddit.com/user/Infinite-Science96',
     },
     { 

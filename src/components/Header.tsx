@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -72,7 +73,7 @@ const Header: React.FC = () => {
             handleMenuItemClick('#home');
           }}
         >
-          Portfolio
+          TuBeo5866
         </a>
         
         {/* Desktop Menu */}
@@ -93,7 +94,7 @@ const Header: React.FC = () => {
               {item.label}
               <span 
                 className={cn(
-                  'absolute bottom-0 left-0 w-full h-[2px] transition-all duration-300 transform', 
+                  'absolute bottom-0 left-0 right-0 mx-auto w-1/2 h-[2px] transition-all duration-300 transform', 
                   activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
                 )}
               />

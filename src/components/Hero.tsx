@@ -5,15 +5,25 @@ import AnimatedText from './AnimatedText';
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || !scrollButtonRef.current) return;
       const scrollPosition = window.scrollY;
       const translateY = scrollPosition * 0.3; // Parallax effect on scroll
       containerRef.current.style.transform = `translateY(${translateY}px)`;
+      
+      // Make scroll button fade out when scrolling
+      if (scrollPosition > 100) {
+        scrollButtonRef.current.style.opacity = '0';
+        scrollButtonRef.current.style.pointerEvents = 'none';
+      } else {
+        scrollButtonRef.current.style.opacity = '1';
+        scrollButtonRef.current.style.pointerEvents = 'auto';
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -69,17 +79,7 @@ const Hero: React.FC = () => {
             I'm a software engineer specializing in full-stack development, creating robust and scalable applications and games.
           </p>
           
-          <div className="flex gap-4 pt-2 justify-center animate-fade-in-up animate-delay-500">
-            <a 
-              href="#projects" 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:translate-y-[-2px] shadow-md hover:shadow-lg"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              View Work
-            </a>
+          <div className="flex justify-center animate-fade-in-up animate-delay-500">
             <a 
               href="#contact" 
               className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:translate-y-[-2px]"
@@ -96,8 +96,9 @@ const Hero: React.FC = () => {
       
       {/* Scroll down indicator */}
       <button 
+        ref={scrollButtonRef}
         onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors animation-pulse flex flex-col items-center space-y-2"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors animation-pulse flex flex-col items-center space-y-2 transition-opacity duration-300"
         aria-label="Scroll to next section"
       >
         <span className="text-sm font-medium tracking-wide">Scroll</span>

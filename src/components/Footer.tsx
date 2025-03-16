@@ -1,6 +1,19 @@
 
 import React from 'react';
-import { Heart, Github, Linkedin, Mail, Twitter, ExternalLink } from 'lucide-react';
+import { 
+  Github, 
+  Linkedin, 
+  Mail, 
+  Twitter, 
+  ExternalLink, 
+  Facebook, 
+  Youtube, 
+  Instagram, 
+  Music, 
+  Disc, 
+  Gamepad2, 
+  MessageSquare
+} from 'lucide-react';
 import { Button } from './ui/button';
 
 const Footer: React.FC = () => {
@@ -16,6 +29,7 @@ const Footer: React.FC = () => {
       name: 'GitHub',
       icon: <Github size={18} />,
       href: 'https://github.com/yourusername',
+      className: 'w-auto px-3',
     },
     { 
       name: 'LinkedIn',
@@ -23,9 +37,69 @@ const Footer: React.FC = () => {
       href: 'https://linkedin.com/in/yourprofile',
     },
     { 
-      name: 'Twitter',
+      name: 'Twitter (X)',
       icon: <Twitter size={18} />,
       href: 'https://twitter.com/yourhandle',
+    },
+    { 
+      name: 'Discord',
+      icon: <MessageSquare size={18} />,
+      href: 'https://discord.com/users/yourusername',
+    },
+    { 
+      name: 'YouTube',
+      icon: <Youtube size={18} />,
+      href: 'https://youtube.com/@yourchannel',
+    },
+    { 
+      name: 'TikTok',
+      icon: <Music size={18} />,
+      href: 'https://tiktok.com/@yourusername',
+    },
+    { 
+      name: 'Threads',
+      icon: <ExternalLink size={18} />,
+      href: 'https://threads.net/@yourusername',
+    },
+    { 
+      name: 'Bluesky',
+      icon: <ExternalLink size={18} />,
+      href: 'https://bsky.app/profile/yourusername',
+    },
+    { 
+      name: 'Facebook 1',
+      icon: <Facebook size={18} />,
+      href: 'https://facebook.com/yourusername1',
+    },
+    { 
+      name: 'Facebook 2',
+      icon: <Facebook size={18} />,
+      href: 'https://facebook.com/yourusername2',
+    },
+    { 
+      name: 'Reddit',
+      icon: <ExternalLink size={18} />,
+      href: 'https://reddit.com/user/yourusername',
+    },
+    { 
+      name: 'Instagram',
+      icon: <Instagram size={18} />,
+      href: 'https://instagram.com/yourusername',
+    },
+    { 
+      name: 'Steam',
+      icon: <Gamepad2 size={18} />,
+      href: 'https://steamcommunity.com/id/yourusername',
+    },
+    { 
+      name: 'SoundCloud',
+      icon: <Music size={18} />,
+      href: 'https://soundcloud.com/yourusername',
+    },
+    { 
+      name: 'Spotify',
+      icon: <Disc size={18} />,
+      href: 'https://open.spotify.com/user/yourusername',
     },
   ];
   
@@ -35,18 +109,21 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Logo and Tagline */}
           <div className="space-y-4">
-            <a href="#" className="text-2xl font-display font-bold tracking-tight">Portfolio</a>
+            <a href="#" className="text-2xl font-display font-bold tracking-tight">TuBeo5866</a>
             <p className="text-muted-foreground mt-2 max-w-xs">
               Crafting beautiful digital experiences with precision and purpose.
             </p>
-            <div className="flex space-x-3 mt-6">
+            <div className="flex flex-wrap gap-3 mt-6">
               {socialLinks.map((link) => (
                 <a 
                   key={link.name}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-background hover:bg-primary hover:text-primary-foreground rounded-full p-2 transition-colors duration-200"
+                  className={cn(
+                    "bg-background hover:bg-primary hover:text-primary-foreground rounded-full p-2 transition-colors duration-200",
+                    link.className
+                  )}
                   aria-label={link.name}
                 >
                   {link.icon}
@@ -56,12 +133,11 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Column 2: Navigation Links */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider">Navigation</h3>
-            <nav className="flex flex-col space-y-3">
+          <div className="space-y-4 text-center">
+            <h3 className="text-sm font-semibold uppercase tracking-wider">Menu</h3>
+            <nav className="flex flex-col space-y-3 items-center">
               <a href="#home" className="text-sm hover:text-primary transition-colors">Home</a>
               <a href="#about" className="text-sm hover:text-primary transition-colors">About</a>
-              <a href="#projects" className="text-sm hover:text-primary transition-colors">Projects</a>
               <a href="#skills" className="text-sm hover:text-primary transition-colors">Skills</a>
               <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a>
             </nav>
@@ -81,13 +157,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Your Name. All rights reserved.</p>
-          <div className="flex items-center mt-4 md:mt-0">
-            <span>Made with</span>
-            <Heart size={14} className="mx-1 text-primary" />
-            <span>and passion</span>
-          </div>
+        <div className="border-t border-border mt-8 pt-8 flex justify-center text-sm text-muted-foreground">
+          <p>&copy; 2025 TuBeo5866. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -95,3 +166,6 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
+// Add the missing cn import
+import { cn } from '@/lib/utils';

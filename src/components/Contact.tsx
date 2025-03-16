@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import { 
   Mail, 
@@ -14,7 +15,8 @@ import {
   Cloud, 
   Facebook, 
   Instagram, 
-  ExternalLink 
+  ExternalLink,
+  AtSign
 } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -97,7 +99,7 @@ const Contact: React.FC = () => {
       href: "https://x.com/tubeo5866" 
     },
     { 
-      icon: <Cloud size={20} />, 
+      icon: <ExternalLink size={20} className="rotate-45" />, 
       label: "Bluesky", 
       href: "https://bsky.app/profile/tubeo5866.bsky.app" 
     },
@@ -112,7 +114,7 @@ const Contact: React.FC = () => {
       href: "https://facebook.com/TuBeo58666" 
     },
     { 
-      icon: <ExternalLink size={20} />, 
+      icon: <ExternalLink size={20} className="rotate-180" />, 
       label: "Reddit", 
       href: "https://www.reddit.com/user/Infinite-Science96" 
     },
@@ -137,7 +139,7 @@ const Contact: React.FC = () => {
       href: "https://open.spotify.com/user/316petzrdvrteasaneyw4hq2g3se" 
     },
     { 
-      icon: <ExternalLink size={20} />, 
+      icon: <AtSign size={20} />, 
       label: "Threads", 
       href: "https://www.threads.net/@tubeo5866" 
     }

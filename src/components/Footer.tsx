@@ -12,7 +12,8 @@ import {
   Gamepad2, 
   MessageSquare,
   Cloud,
-  ExternalLink
+  ExternalLink,
+  AtSign
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
@@ -54,12 +55,12 @@ const Footer: React.FC = () => {
     },
     { 
       name: 'Threads',
-      icon: <ExternalLink size={18} />,
+      icon: <AtSign size={18} />,
       href: 'https://www.threads.net/@tubeo5866',
     },
     { 
       name: 'Bluesky',
-      icon: <Cloud size={18} />,
+      icon: <ExternalLink size={18} className="rotate-45" />, // Butterfly-like appearance
       href: 'https://bsky.app/profile/tubeo5866.bsky.app',
     },
     { 
@@ -74,7 +75,7 @@ const Footer: React.FC = () => {
     },
     { 
       name: 'Reddit',
-      icon: <ExternalLink size={18} />,
+      icon: <ExternalLink size={18} className="rotate-180" />, // Reddit-like appearance
       href: 'https://www.reddit.com/user/Infinite-Science96',
     },
     { 

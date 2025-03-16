@@ -78,19 +78,6 @@ const Hero: React.FC = () => {
           <p className="body-lg text-muted-foreground max-w-lg mx-auto animate-fade-in-up animate-delay-400">
             I'm a software engineer specializing in full-stack development, creating robust and scalable applications and games.
           </p>
-          
-          <div className="flex justify-center animate-fade-in-up animate-delay-500">
-            <a 
-              href="#contact" 
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:translate-y-[-2px]"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Get in Touch
-            </a>
-          </div>
         </div>
       </div>
       

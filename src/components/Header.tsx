@@ -7,6 +7,7 @@ const menuItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -77,7 +78,7 @@ const Header: React.FC = () => {
         </a>
         
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 bg-gray-200/20 backdrop-blur-sm px-4 py-2 rounded-full">
           {menuItems.map((item) => (
             <a
               key={item.label}
@@ -97,6 +98,7 @@ const Header: React.FC = () => {
                   'absolute bottom-0 left-0 right-0 mx-auto w-1/2 h-[2px] transition-all duration-300 transform', 
                   activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
                 )}
+                style={{ left: '25%' }} {/* Center the underline */}
               />
             </a>
           ))}

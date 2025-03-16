@@ -73,7 +73,7 @@ const About: React.FC = () => {
         
         <div 
           ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
         >
           <FeatureCard 
             icon={<PenTool size={24} />}
@@ -105,7 +105,7 @@ const About: React.FC = () => {
           <div className="space-y-6 animate-on-scroll">
             <h3 className="heading-md">My Journey</h3>
             <p className="body-normal text-muted-foreground">
-              With over 8 years of experience in digital design and development, I've collaborated with startups, agencies, and established companies to create meaningful digital products. My approach combines aesthetics with functionality, ensuring that every project not only looks beautiful but also performs exceptionally.
+              With over 5 years of experience in digital design and development, I've collaborated with startups, agencies, and established companies to create meaningful digital products. My approach combines aesthetics with functionality, ensuring that every project not only looks beautiful but also performs exceptionally.
             </p>
             <p className="body-normal text-muted-foreground">
               I believe that the best digital experiences are born from a deep understanding of both user needs and business goals. My work process emphasizes research, prototyping, and iterative refinement to achieve optimal results.
@@ -120,16 +120,20 @@ const About: React.FC = () => {
               <h4 className="heading-sm mb-6">Professional Experience</h4>
               <div className="space-y-6">
                 <div className="border-l-2 border-primary/30 pl-4 py-1">
-                  <p className="font-medium">Senior Designer & Developer</p>
-                  <p className="text-muted-foreground">Creative Studio • 2020 - Present</p>
+                  <p className="font-medium">Developer: C++, Python,...</p>
+                  <p className="text-muted-foreground">• 2020 - Present</p>
                 </div>
                 <div className="border-l-2 border-primary/30 pl-4 py-1">
-                  <p className="font-medium">UI/UX Designer</p>
-                  <p className="text-muted-foreground">Digital Agency • 2018 - 2020</p>
+                  <p className="font-medium">Designer: UI, UX, Visual,...</p>
+                  <p className="text-muted-foreground">• 2022 - Present</p>
                 </div>
                 <div className="border-l-2 border-primary/30 pl-4 py-1">
-                  <p className="font-medium">Front-end Developer</p>
-                  <p className="text-muted-foreground">Tech Startup • 2015 - 2018</p>
+                  <p className="font-medium">Manager: for many hostings</p>
+                  <p className="text-muted-foreground">• 2024 - Present</p>
+                </div>
+                <div className="border-l-2 border-primary/30 pl-4 py-1">
+                  <p className="font-medium">Supporter: for many games</p>
+                  <p className="text-muted-foreground">• 2024 - Present</p>
                 </div>
               </div>
             </div>

@@ -2,17 +2,17 @@
 import React from 'react';
 import { 
   Github, 
-  Linkedin, 
   Mail, 
-  Twitter, 
-  ExternalLink, 
+  X, 
   Facebook, 
   Youtube, 
   Instagram, 
   Music, 
   Disc, 
   Gamepad2, 
-  MessageSquare
+  MessageSquare,
+  Cloud,
+  ExternalLink
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
@@ -24,8 +24,13 @@ const Footer: React.FC = () => {
     { 
       name: 'GitHub',
       icon: <Github size={18} />,
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/tubeo5866',
       className: 'w-auto px-5', // Make GitHub button longer
+    },
+    { 
+      name: 'Discord',
+      icon: <MessageSquare size={18} />,
+      href: 'https://discordapp.com/users/698715849434988608',
     },
     { 
       name: 'Email',
@@ -33,74 +38,64 @@ const Footer: React.FC = () => {
       href: 'mailto:phungdangtuantu@gmail.com',
     },
     { 
-      name: 'LinkedIn',
-      icon: <Linkedin size={18} />,
-      href: 'https://linkedin.com/in/yourprofile',
-    },
-    { 
-      name: 'Twitter (X)',
-      icon: <Twitter size={18} />,
-      href: 'https://twitter.com/yourhandle',
-    },
-    { 
-      name: 'Discord',
-      icon: <MessageSquare size={18} />,
-      href: 'https://discord.com/users/yourusername',
+      name: 'X (Twitter)',
+      icon: <X size={18} />,
+      href: 'https://x.com/tubeo5866',
     },
     { 
       name: 'YouTube',
       icon: <Youtube size={18} />,
-      href: 'https://youtube.com/@yourchannel',
+      href: 'https://youtube.com/TuBeo5866',
     },
     { 
       name: 'TikTok',
       icon: <Music size={18} />,
-      href: 'https://tiktok.com/@yourusername',
+      href: 'https://tiktok.com/@tubeo5866',
     },
     { 
       name: 'Threads',
       icon: <ExternalLink size={18} />,
-      href: 'https://threads.net/@yourusername',
+      href: 'https://www.threads.net/@tubeo5866',
     },
     { 
       name: 'Bluesky',
-      icon: <ExternalLink size={18} />,
-      href: 'https://bsky.app/profile/yourusername',
+      icon: <Cloud size={18} />,
+      href: 'https://bsky.app/profile/tubeo5866.bsky.app',
     },
     { 
       name: 'Facebook 1',
       icon: <Facebook size={18} />,
-      href: 'https://facebook.com/yourusername1',
+      href: 'https://facebook.com/TuBeo5866',
     },
     { 
       name: 'Facebook 2',
       icon: <Facebook size={18} />,
-      href: 'https://facebook.com/yourusername2',
+      href: 'https://facebook.com/TuBeo58666',
     },
     { 
       name: 'Reddit',
       icon: <ExternalLink size={18} />,
-      href: 'https://reddit.com/user/yourusername',
+      href: 'https://www.reddit.com/user/Infinite-Science96',
     },
     { 
       name: 'Instagram',
       icon: <Instagram size={18} />,
-      href: 'https://instagram.com/yourusername',
+      href: 'https://www.instagram.com/tubeo5866',
     },
     { 
       name: 'Steam',
       icon: <Gamepad2 size={18} />,
-      href: 'https://steamcommunity.com/id/yourusername',
+      href: 'https://steamcommunity.com/id/tubeo5866',
     },
     { 
       name: 'SoundCloud',
-      icon: <Music size={18} />,
-      href: 'https://soundcloud.com/yourusername',
+      icon: <Cloud size={18} />,
+      href: 'https://soundcloud.com/tubeo5866',
     },
     { 
       name: 'Spotify',
       icon: <Disc size={18} />,
-      href: 'https://open.spotify.com/user/yourusername',
+      href: 'https://open.spotify.com/user/316petzrdvrteasaneyw4hq2g3se',
     },
   ];
   

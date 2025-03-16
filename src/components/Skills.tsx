@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { 
   Paintbrush, Code, PenTool, Layers, Monitor, 
@@ -59,7 +58,7 @@ const Skills: React.FC = () => {
       name: "Other",
       skills: [
         { name: "Managing", level: 9, icon: <Users size={24} /> },
-        { name: "Reviewing", level: 8, icon: <PenTool size={24} /> },
+        { name: "Supporting", level: 8, icon: <PenTool size={24} /> },
         { name: "Network Security", level: 9, icon: <Shield size={24} /> },
         { name: "Gaming - Player", level: 10, icon: <Gamepad2 size={24} /> },
       ]

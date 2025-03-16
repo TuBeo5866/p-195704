@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -20,9 +19,8 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      // Find the current active section based on scroll position
       const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.pageYOffset + 300; // Offset to trigger earlier
+      const scrollPosition = window.pageYOffset + 300;
       
       sections.forEach(section => {
         const sectionTop = (section as HTMLElement).offsetTop;
@@ -36,14 +34,13 @@ const Header: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    // Prevent scrolling when menu is open
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
 
@@ -51,7 +48,6 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
     document.body.style.overflow = 'auto';
     
-    // Smooth scroll to the section
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -77,7 +73,6 @@ const Header: React.FC = () => {
           TuBeo5866
         </a>
         
-        {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8 bg-gray-200/20 backdrop-blur-sm px-4 py-2 rounded-full">
           {menuItems.map((item) => (
             <a
@@ -95,16 +90,14 @@ const Header: React.FC = () => {
               {item.label}
               <span 
                 className={cn(
-                  'absolute bottom-0 left-0 right-0 mx-auto w-1/2 h-[2px] transition-all duration-300 transform', 
+                  'absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300 transform', 
                   activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
                 )}
-                style={{ left: '25%' }} /* Center the underline */
               />
             </a>
           ))}
         </nav>
         
-        {/* Mobile Menu Button */}
         <button 
           className="md:hidden text-foreground p-2 focus:outline-none" 
           onClick={toggleMenu}
@@ -114,7 +107,6 @@ const Header: React.FC = () => {
         </button>
       </div>
       
-      {/* Mobile Menu Overlay */}
       <div 
         className={cn(
           'fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-300 md:hidden',

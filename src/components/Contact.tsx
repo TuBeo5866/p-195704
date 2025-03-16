@@ -1,6 +1,21 @@
-
 import React, { useRef, useEffect, useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Send, 
+  Github, 
+  Youtube, 
+  Music, 
+  X, 
+  Disc, 
+  Gamepad2, 
+  MessageSquare, 
+  Cloud, 
+  Facebook, 
+  Instagram, 
+  ExternalLink 
+} from 'lucide-react';
 
 const Contact: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -54,6 +69,79 @@ const Contact: React.FC = () => {
       }, 5000);
     }, 1500);
   };
+
+  const socialLinks = [
+    { 
+      icon: <Github size={20} />, 
+      label: "GitHub", 
+      href: "https://github.com/tubeo5866" 
+    },
+    { 
+      icon: <MessageSquare size={20} />, 
+      label: "Discord", 
+      href: "https://discordapp.com/users/698715849434988608" 
+    },
+    { 
+      icon: <Youtube size={20} />, 
+      label: "YouTube", 
+      href: "https://youtube.com/TuBeo5866" 
+    },
+    { 
+      icon: <Music size={20} />, 
+      label: "TikTok", 
+      href: "https://tiktok.com/@tubeo5866" 
+    },
+    { 
+      icon: <X size={20} />, 
+      label: "X", 
+      href: "https://x.com/tubeo5866" 
+    },
+    { 
+      icon: <Cloud size={20} />, 
+      label: "Bluesky", 
+      href: "https://bsky.app/profile/tubeo5866.bsky.app" 
+    },
+    { 
+      icon: <Facebook size={20} />, 
+      label: "Facebook 1", 
+      href: "https://facebook.com/TuBeo5866" 
+    },
+    { 
+      icon: <Facebook size={20} />, 
+      label: "Facebook 2", 
+      href: "https://facebook.com/TuBeo58666" 
+    },
+    { 
+      icon: <ExternalLink size={20} />, 
+      label: "Reddit", 
+      href: "https://www.reddit.com/user/Infinite-Science96" 
+    },
+    { 
+      icon: <Instagram size={20} />, 
+      label: "Instagram", 
+      href: "https://www.instagram.com/tubeo5866" 
+    },
+    { 
+      icon: <Gamepad2 size={20} />, 
+      label: "Steam", 
+      href: "https://steamcommunity.com/id/tubeo5866" 
+    },
+    { 
+      icon: <Cloud size={20} />, 
+      label: "SoundCloud", 
+      href: "https://soundcloud.com/tubeo5866" 
+    },
+    { 
+      icon: <Disc size={20} />, 
+      label: "Spotify", 
+      href: "https://open.spotify.com/user/316petzrdvrteasaneyw4hq2g3se" 
+    },
+    { 
+      icon: <ExternalLink size={20} />, 
+      label: "Threads", 
+      href: "https://www.threads.net/@tubeo5866" 
+    }
+  ];
 
   return (
     <section 
@@ -110,55 +198,20 @@ const Contact: React.FC = () => {
               
               <div className="mt-12 animate-on-scroll">
                 <h4 className="font-medium mb-4">Connect on Social Media</h4>
-                <div className="flex space-x-4">
-                  <a 
-                    href="#" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                    aria-label="Twitter"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M22 4.01C21.0424 4.67546 19.9821 5.19211 18.86 5.54C18.2577 4.84751 17.4573 4.35488 16.567 4.12518C15.6767 3.89547 14.7395 3.93814 13.8821 4.24839C13.0247 4.55865 12.2884 5.12153 11.773 5.85838C11.2575 6.59524 10.9877 7.47173 11 8.36V9.36C9.24257 9.40156 7.50127 8.98383 5.93101 8.14402C4.36074 7.30421 3.01032 6.06786 2 4.57C2 4.57 -2 13.57 8 17.57C5.94053 18.9722 3.48716 19.7153 1 19.73C11 24.73 23 17.73 23 8.33C22.9991 8.05262 22.9723 7.77637 22.92 7.51C23.9406 6.51293 24.6608 5.29143 25 3.95L22 4.01Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                  <a 
-                    href="#" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M6 9H2V21H6V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                  <a 
-                    href="#" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 0.999999C19.91 0.999999 18.73 0.649999 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.649999 5.09 0.999999 5.09 0.999999C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                  <a 
-                    href="#" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61991 14.1902 8.22773 13.4229 8.09406 12.5922C7.9604 11.7616 8.09206 10.9099 8.47032 10.1584C8.84858 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87659 12.63 8C13.4789 8.12588 14.2648 8.52146 14.8717 9.12831C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M17.5 6.5H17.51" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
+                <div className="flex flex-wrap gap-2">
+                  {socialLinks.map((link, index) => (
+                    <a 
+                      key={index}
+                      href={link.href} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                      aria-label={link.label}
+                      title={link.label}
+                    >
+                      {link.icon}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>

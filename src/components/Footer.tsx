@@ -1,104 +1,14 @@
 
 import React from 'react';
 import { 
-  Github, 
-  Mail, 
-  X, 
-  Facebook, 
-  Youtube, 
-  Instagram, 
-  Music, 
-  Disc, 
-  Gamepad2, 
-  MessageSquare,
-  Cloud,
   ExternalLink,
-  AtSign
+  Link
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
-  const socialLinks = [
-    { 
-      name: 'GitHub',
-      icon: <Github size={18} />,
-      href: 'https://github.com/tubeo5866',
-      className: 'w-auto px-5', // Make GitHub button longer
-    },
-    { 
-      name: 'Discord',
-      icon: <MessageSquare size={18} />,
-      href: 'https://discordapp.com/users/698715849434988608',
-    },
-    { 
-      name: 'Email',
-      icon: <Mail size={18} />,
-      href: 'mailto:phungdangtuantu@gmail.com',
-    },
-    { 
-      name: 'X (Twitter)',
-      icon: <X size={18} />,
-      href: 'https://x.com/tubeo5866',
-    },
-    { 
-      name: 'YouTube',
-      icon: <Youtube size={18} />,
-      href: 'https://youtube.com/TuBeo5866',
-    },
-    { 
-      name: 'TikTok',
-      icon: <Music size={18} />,
-      href: 'https://tiktok.com/@tubeo5866',
-    },
-    { 
-      name: 'Threads',
-      icon: <AtSign size={18} />,
-      href: 'https://www.threads.net/@tubeo5866',
-    },
-    { 
-      name: 'Bluesky',
-      icon: <Cloud size={18} className="rotate-45" />, // Better butterfly-like appearance
-      href: 'https://bsky.app/profile/tubeo5866.bsky.app',
-    },
-    { 
-      name: 'Facebook 1',
-      icon: <Facebook size={18} />,
-      href: 'https://facebook.com/TuBeo5866',
-    },
-    { 
-      name: 'Facebook 2',
-      icon: <Facebook size={18} />,
-      href: 'https://facebook.com/TuBeo58666',
-    },
-    { 
-      name: 'Reddit',
-      icon: <MessageSquare size={18} className="rotate-180" />, // More Reddit-like appearance
-      href: 'https://www.reddit.com/user/Infinite-Science96',
-    },
-    { 
-      name: 'Instagram',
-      icon: <Instagram size={18} />,
-      href: 'https://www.instagram.com/tubeo5866',
-    },
-    { 
-      name: 'Steam',
-      icon: <Gamepad2 size={18} />,
-      href: 'https://steamcommunity.com/id/tubeo5866',
-    },
-    { 
-      name: 'SoundCloud',
-      icon: <Cloud size={18} />,
-      href: 'https://soundcloud.com/tubeo5866',
-    },
-    { 
-      name: 'Spotify',
-      icon: <Disc size={18} />,
-      href: 'https://open.spotify.com/user/316petzrdvrteasaneyw4hq2g3se',
-    },
-  ];
   
   return (
     <footer className="bg-secondary/30 py-12 mt-12">
@@ -111,21 +21,15 @@ const Footer: React.FC = () => {
               Crafting beautiful digital experiences with precision and purpose.
             </p>
             <div className="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
-              {socialLinks.map((link) => (
-                <a 
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "bg-background hover:bg-primary hover:text-primary-foreground rounded-full p-2 transition-colors duration-200",
-                    link.className
-                  )}
-                  aria-label={link.name}
-                >
-                  {link.icon}
-                </a>
-              ))}
+              <a 
+                href="https://linktr.ee/tubeo5866"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-background hover:bg-primary hover:text-primary-foreground rounded-full p-2 transition-colors duration-200 w-auto px-5 flex items-center gap-2"
+                aria-label="Linktree"
+              >
+                <Link size={18} /> Linktree
+              </a>
             </div>
           </div>
           
@@ -156,7 +60,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-border mt-8 pt-8 flex justify-center text-sm text-muted-foreground text-center">
-          <p>&copy; 2025 TuBeo5866. All rights reserved.</p>
+          <p>&copy; {currentYear} TuBeo5866. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -115,7 +115,7 @@
   
   .section-title::after {
     content: "";
-    @apply absolute left-0 -bottom-2 w-1/2 h-[2px] bg-primary;
+    @apply absolute left-0 -bottom-2 w-full h-[2px] bg-primary;
   }
   
   .text-gradient {

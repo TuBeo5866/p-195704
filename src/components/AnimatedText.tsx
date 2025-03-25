@@ -6,8 +6,8 @@ interface AnimatedTextProps {
   text: string;
   className?: string;
   once?: boolean;
-  delayStart?: number; // delay before animation starts in ms
-  staggerDelay?: number; // delay between each character in ms
+  delayStart?: number;
+  staggerDelay?: number;
   animationType?: 'fade' | 'slide' | 'scale';
   el?: 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 }
@@ -34,12 +34,12 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
     
     let timeoutId: NodeJS.Timeout;
     
+    // Use a simpler animation approach
     timeoutId = setTimeout(() => {
-      spans.forEach((span, index) => {
-        setTimeout(() => {
-          span.style.opacity = '1';
-          span.style.transform = 'translateY(0) scale(1)';
-        }, index * staggerDelay);
+      // Animate all elements at once rather than staggering each character
+      spans.forEach((span) => {
+        span.style.opacity = '1';
+        span.style.transform = 'translateY(0) scale(1)';
       });
       
       renderedRef.current = true;
@@ -48,29 +48,32 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [text, once, delayStart, staggerDelay]);
+  }, [text, once, delayStart]);
 
   const getInitialStyles = (): React.CSSProperties => {
     switch (animationType) {
       case 'slide':
-        return { opacity: '0', transform: 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease' };
+        return { opacity: '0', transform: 'translateY(20px)', transition: 'opacity 0.5s ease, transform 0.5s ease' };
       case 'scale':
-        return { opacity: '0', transform: 'scale(0.9)', transition: 'opacity 0.6s ease, transform 0.6s ease' };
+        return { opacity: '0', transform: 'scale(0.9)', transition: 'opacity 0.5s ease, transform 0.5s ease' };
       case 'fade':
       default:
-        return { opacity: '0', transition: 'opacity 0.6s ease' };
+        return { opacity: '0', transition: 'opacity 0.5s ease' };
     }
   };
 
+  // Group characters into words for more efficient rendering
+  const words = text.split(' ');
+
   return (
     <div ref={containerRef} className={cn('inline-block', className)} aria-label={text}>
-      {text.split('').map((char, index) => (
+      {words.map((word, index) => (
         <Element 
-          key={`${char}-${index}`}
+          key={`${word}-${index}`}
           style={getInitialStyles()}
-          className="inline-block"
+          className="inline-block mr-1"
         >
-          {char === ' ' ? '\u00A0' : char}
+          {word}
         </Element>
       ))}
     </div>

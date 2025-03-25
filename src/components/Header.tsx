@@ -17,27 +17,36 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      // Only update state when crossing the threshold
+      const shouldBeScrolled = window.scrollY > 20;
+      if (isScrolled !== shouldBeScrolled) {
+        setIsScrolled(shouldBeScrolled);
+      }
       
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.pageYOffset + 300;
-      
-      sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute('id') || '';
+      // Less frequent section detection
+      if (window.scrollY % 5 === 0) { // Only check every 5px of scroll
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.pageYOffset + 300;
         
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(sectionId);
-        }
-      });
+        sections.forEach(section => {
+          const sectionTop = (section as HTMLElement).offsetTop;
+          const sectionHeight = section.clientHeight;
+          const sectionId = section.getAttribute('id') || '';
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            if (activeSection !== sectionId) {
+              setActiveSection(sectionId);
+            }
+          }
+        });
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isScrolled, activeSection]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -57,8 +66,8 @@ const Header: React.FC = () => {
   return (
     <header 
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 backdrop-blur-sm',
-        isScrolled ? 'bg-muted/80 shadow-subtle' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
+        isScrolled ? 'bg-muted/80 shadow-subtle backdrop-blur-sm' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -74,7 +83,7 @@ const Header: React.FC = () => {
         </a>
         
         <nav className="hidden md:flex">
-          <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 flex space-x-8">
+          <div className="acrylic px-4 py-2 flex space-x-8">
             {menuItems.map((item) => (
               <a
                 key={item.label}
@@ -109,33 +118,32 @@ const Header: React.FC = () => {
         </button>
       </div>
       
-      <div 
-        className={cn(
-          'fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-300 md:hidden',
-          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        )}
-      >
-        <nav className="flex flex-col items-center space-y-8 py-8">
-          {menuItems.map((item, index) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={cn(
-                'text-2xl font-medium transition-all duration-300 hover:text-primary transform',
-                isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0',
-                activeSection === item.href.slice(1) ? 'text-primary font-semibold' : 'text-foreground'
-              )}
-              style={{ transitionDelay: `${index * 50}ms` }}
-              onClick={(e) => {
-                e.preventDefault();
-                handleMenuItemClick(item.href);
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+      {/* Only render mobile menu when open to save resources */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center md:hidden"
+        >
+          <nav className="flex flex-col items-center space-y-8 py-8">
+            {menuItems.map((item, index) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className={cn(
+                  'text-2xl font-medium transition-all duration-300 hover:text-primary',
+                  activeSection === item.href.slice(1) ? 'text-primary font-semibold' : 'text-foreground'
+                )}
+                style={{ transitionDelay: `${index * 50}ms` }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleMenuItemClick(item.href);
+                }}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

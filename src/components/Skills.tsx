@@ -1,7 +1,8 @@
+
 import React, { useRef, useEffect } from 'react';
 import { 
   Paintbrush, Code, PenTool, Layers, Monitor, 
-  Users, Shield, Gamepad2, Database, Terminal
+  Users, Shield, Gamepad2
 } from 'lucide-react';
 import SkillCard from './SkillCard';
 import { cn } from '@/lib/utils';
@@ -10,17 +11,18 @@ const Skills: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
+    // Simplified IntersectionObserver with fewer updates
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-fade-in-up');
             entry.target.classList.remove('opacity-0', 'translate-y-10');
-            observer.unobserve(entry.target);
+            observer.unobserve(entry.target); // Stop observing once animated
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
     );
 
     if (sectionRef.current) {
@@ -89,16 +91,13 @@ const Skills: React.FC = () => {
                 {category.name}
               </h3>
               <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill) => (
                   <SkillCard 
                     key={skill.name}
                     name={skill.name}
                     level={skill.level}
                     icon={skill.icon}
-                    className={cn(
-                      "animate-on-scroll",
-                      `animate-delay-${(categoryIndex * 100) + (skillIndex * 100)}`
-                    )}
+                    className="animate-on-scroll"
                   />
                 ))}
               </div>
@@ -106,33 +105,22 @@ const Skills: React.FC = () => {
           ))}
         </div>
         
+        {/* Simplified approach section with fewer decorative elements */}
         <div className="mt-24 glass p-8 rounded-2xl animate-on-scroll">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
               <h3 className="heading-md mb-6">My Approach to Learning</h3>
-              <p className="text-muted-foreground mb-4">
-                I believe in continuous growth and expanding my skillset. Technology evolves rapidly, and I'm committed to staying at the forefront by regularly learning new tools and techniques.
-              </p>
               <p className="text-muted-foreground">
-                My learning process involves hands-on projects, contributing to open source, and participating in design and development communities to exchange knowledge.
+                I believe in continuous growth and expanding my skillset. Technology evolves rapidly, and I'm committed to staying at the forefront by regularly learning new tools and techniques.
               </p>
             </div>
             <div>
               <h3 className="heading-md mb-6">Currently Learning</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 rounded-full bg-primary"></div>
-                  <span>Three.js for immersive web experiences</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 rounded-full bg-primary"></div>
-                  <span>Motion design principles for fluid animations</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 rounded-full bg-primary"></div>
-                  <span>WebGL and GLSL for custom visual effects</span>
-                </div>
-              </div>
+              <ul className="space-y-2">
+                <li>Three.js for immersive web experiences</li>
+                <li>Motion design principles for fluid animations</li>
+                <li>WebGL and GLSL for custom visual effects</li>
+              </ul>
             </div>
           </div>
         </div>

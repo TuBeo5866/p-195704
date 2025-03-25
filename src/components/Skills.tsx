@@ -105,23 +105,17 @@ const Skills: React.FC = () => {
           ))}
         </div>
         
-        {/* Simplified approach section with fewer decorative elements */}
+        {/* Merged section with centered content */}
         <div className="mt-24 glass p-8 rounded-2xl animate-on-scroll">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-              <h3 className="heading-md mb-6">My Approach to Learning</h3>
-              <p className="text-muted-foreground">
-                I believe in continuous growth and expanding my skillset. Technology evolves rapidly, and I'm committed to staying at the forefront by regularly learning new tools and techniques.
-              </p>
-            </div>
-            <div>
-              <h3 className="heading-md mb-6">Currently Learning</h3>
-              <ul className="space-y-2">
-                <li>Three.js for immersive web experiences</li>
-                <li>Motion design principles for fluid animations</li>
-                <li>WebGL and GLSL for custom visual effects</li>
-              </ul>
-            </div>
+          <div className="text-center max-w-3xl mx-auto">
+            <h3 className="heading-md mb-6">Currently Working & Doing</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li>Setting up Hosting (for free, I think...)</li>
+              <li>Making programs & games</li>
+              <li>Learning 3D, including Three.js</li>
+              <li>Exploring WebGL and GLSL for custom visual effects</li>
+              <li>Building immersive web experiences</li>
+            </ul>
           </div>
         </div>
       </div>

@@ -48,10 +48,10 @@ const Skills: React.FC = () => {
     {
       name: "Development",
       skills: [
-        { name: "C++", level: 10, icon: <Code size={24} /> },
-        { name: "Python", level: 9, icon: <Terminal size={24} /> },
-        { name: "JavaScript", level: 8, icon: <Database size={24} /> },
-        { name: "HTML, CSS", level: 8, icon: <Monitor size={24} /> },
+        { name: "Minecraft Developer", level: 9, icon: <Gamepad2 size={24} /> },
+        { name: "Program Developer", level: 8, icon: <Code size={24} /> },
+        { name: "Game Developer", level: 8, icon: <Gamepad2 size={24} /> },
+        { name: "Website Developer", level: 9, icon: <Monitor size={24} /> },
       ]
     },
     {

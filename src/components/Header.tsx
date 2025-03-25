@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -6,7 +7,6 @@ const menuItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 backdrop-blur-sm',
-        isScrolled ? 'bg-muted shadow-subtle' : 'bg-transparent'
+        isScrolled ? 'bg-muted/80 shadow-subtle' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -73,29 +73,31 @@ const Header: React.FC = () => {
           TuBeo5866
         </a>
         
-        <nav className="hidden md:flex space-x-8 bg-gray-200/20 backdrop-blur-sm px-4 py-2 rounded-full">
-          {menuItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={cn(
-                'text-sm font-medium transition-all duration-200 hover:text-primary relative py-2',
-                activeSection === item.href.slice(1) ? 'text-primary' : 'text-foreground'
-              )}
-              onClick={(e) => {
-                e.preventDefault();
-                handleMenuItemClick(item.href);
-              }}
-            >
-              {item.label}
-              <span 
+        <nav className="hidden md:flex">
+          <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 flex space-x-8">
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
                 className={cn(
-                  'absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300 transform', 
-                  activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
+                  'text-sm font-medium transition-all duration-200 hover:text-primary relative py-2',
+                  activeSection === item.href.slice(1) ? 'text-primary' : 'text-foreground'
                 )}
-              />
-            </a>
-          ))}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleMenuItemClick(item.href);
+                }}
+              >
+                {item.label}
+                <span 
+                  className={cn(
+                    'absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300 transform', 
+                    activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
+                  )}
+                />
+              </a>
+            ))}
+          </div>
         </nav>
         
         <button 

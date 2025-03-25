@@ -73,6 +73,10 @@
     @apply backdrop-blur-md bg-black/40 border border-white/10 shadow-glass;
   }
   
+  .acrylic {
+    @apply backdrop-blur-xl bg-black/40 border border-white/10 rounded-full shadow-glass;
+  }
+  
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative;
   }

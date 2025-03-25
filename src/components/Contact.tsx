@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import { 
   Mail, 
@@ -15,7 +16,8 @@ import {
   Facebook, 
   Instagram, 
   ExternalLink,
-  AtSign
+  AtSign,
+  Languages
 } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -192,6 +194,16 @@ const Contact: React.FC = () => {
                     <p className="font-medium">Location</p>
                     <p className="text-muted-foreground">
                       Ha Noi, Viet Nam
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <Languages className="text-primary mt-1" size={20} />
+                  <div>
+                    <p className="font-medium">Support Languages</p>
+                    <p className="text-muted-foreground">
+                      🇻🇳 - 🇺🇸 - 🇷🇺
                     </p>
                   </div>
                 </div>

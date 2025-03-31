@@ -74,13 +74,17 @@ const Header: React.FC = () => {
         <div className="bg-[#1A1F2C]/80 backdrop-blur-lg rounded-full px-3 py-1.5 flex justify-between items-center border border-white/10">
           <a 
             href="#home" 
-            className="text-2xl font-display font-bold tracking-tight hover:text-primary transition-colors"
+            className="hover:opacity-80 transition-opacity"
             onClick={(e) => {
               e.preventDefault();
               handleMenuItemClick('#home');
             }}
           >
-            TuBeo5866
+            <img 
+              src="/lovable-uploads/95074087-2854-4712-8cd7-00d21e8268fd.png" 
+              alt="5866 Logo" 
+              className="h-8 w-auto"
+            />
           </a>
           
           {/* Centered Navigation */}

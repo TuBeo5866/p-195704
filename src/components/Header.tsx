@@ -66,56 +66,58 @@ const Header: React.FC = () => {
   return (
     <header 
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
-        isScrolled ? 'bg-muted/80 shadow-subtle backdrop-blur-sm' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2',
+        isScrolled ? 'py-2' : 'py-3'
       )}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a 
-          href="#home" 
-          className="text-2xl font-display font-bold tracking-tight hover:text-primary transition-colors"
-          onClick={(e) => {
-            e.preventDefault();
-            handleMenuItemClick('#home');
-          }}
-        >
-          TuBeo5866
-        </a>
-        
-        <nav className="hidden md:flex">
-          <div className="acrylic px-4 py-2 flex space-x-8">
-            {menuItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  'text-sm font-medium transition-all duration-200 hover:text-primary relative py-2',
-                  activeSection === item.href.slice(1) ? 'text-primary' : 'text-foreground'
-                )}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleMenuItemClick(item.href);
-                }}
-              >
-                {item.label}
-                <span 
+      <div className="max-w-7xl mx-auto px-2">
+        <div className="bg-[#1A1F2C]/80 backdrop-blur-lg rounded-full px-4 py-2 flex justify-between items-center border border-white/10">
+          <a 
+            href="#home" 
+            className="text-2xl font-display font-bold tracking-tight hover:text-primary transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              handleMenuItemClick('#home');
+            }}
+          >
+            TuBeo5866
+          </a>
+          
+          <nav className="hidden md:flex">
+            <div className="flex space-x-8 items-center">
+              {menuItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
                   className={cn(
-                    'absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300 transform', 
-                    activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
+                    'text-sm font-medium transition-all duration-200 hover:text-primary relative py-2',
+                    activeSection === item.href.slice(1) ? 'text-primary' : 'text-foreground'
                   )}
-                />
-              </a>
-            ))}
-          </div>
-        </nav>
-        
-        <button 
-          className="md:hidden text-foreground p-2 focus:outline-none" 
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleMenuItemClick(item.href);
+                  }}
+                >
+                  {item.label}
+                  <span 
+                    className={cn(
+                      'absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300 transform', 
+                      activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
+                    )}
+                  />
+                </a>
+              ))}
+            </div>
+          </nav>
+          
+          <button 
+            className="md:hidden text-foreground p-2 focus:outline-none" 
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
       
       {/* Only render mobile menu when open to save resources */}

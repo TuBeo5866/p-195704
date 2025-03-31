@@ -36,12 +36,12 @@ const Hero: React.FC = () => {
       
       <div className="section-container flex items-center justify-center relative z-10">
         <div className="flex flex-col space-y-6 justify-center max-w-2xl text-center">
-          {/* Logo Image */}
+          {/* Logo Image - increased to 250% of original size */}
           <div className="flex justify-center mb-4">
             <img 
               src="/lovable-uploads/95074087-2854-4712-8cd7-00d21e8268fd.png" 
               alt="5866 Logo" 
-              className="h-24 w-auto animate-fade-in"
+              className="h-60 w-auto animate-fade-in" // Changed from h-24 to h-60 (250% increase)
             />
           </div>
           

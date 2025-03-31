@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Link } from 'lucide-react';
 
 const menuItems = [
   { label: 'Home', href: '#home' },
@@ -83,7 +83,8 @@ const Header: React.FC = () => {
             TuBeo5866
           </a>
           
-          <nav className="hidden md:flex">
+          {/* Centered Navigation */}
+          <nav className="hidden md:flex flex-1 justify-center">
             <div className="flex space-x-8 items-center">
               {menuItems.map((item) => (
                 <a
@@ -110,6 +111,19 @@ const Header: React.FC = () => {
             </div>
           </nav>
           
+          {/* Linktree Button */}
+          <div className="hidden md:block">
+            <a 
+              href="https://linktr.ee/tubeo5866" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#1A1F2C]/90 hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-full px-4 py-2 text-sm font-medium border border-white/10"
+            >
+              <Link size={16} />
+              Linktree
+            </a>
+          </div>
+          
           <button 
             className="md:hidden text-foreground p-2 focus:outline-none" 
             onClick={toggleMenu}
@@ -120,7 +134,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       
-      {/* Only render mobile menu when open to save resources */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div 
           className="fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center md:hidden"
@@ -143,6 +157,17 @@ const Header: React.FC = () => {
                 {item.label}
               </a>
             ))}
+            
+            {/* Mobile Linktree Button */}
+            <a 
+              href="https://linktr.ee/tubeo5866" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#1A1F2C]/90 hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-full px-5 py-2 text-lg font-medium border border-white/10 mt-4"
+            >
+              <Link size={20} />
+              Linktree
+            </a>
           </nav>
         </div>
       )}

@@ -71,7 +71,7 @@ const Header: React.FC = () => {
       )}
     >
       <div className="max-w-7xl mx-auto px-2">
-        <div className="bg-[#1A1F2C]/80 backdrop-blur-lg rounded-full px-4 py-2 flex justify-between items-center border border-white/10">
+        <div className="bg-[#1A1F2C]/80 backdrop-blur-lg rounded-full px-3 py-1.5 flex justify-between items-center border border-white/10">
           <a 
             href="#home" 
             className="text-2xl font-display font-bold tracking-tight hover:text-primary transition-colors"
@@ -85,13 +85,13 @@ const Header: React.FC = () => {
           
           {/* Centered Navigation */}
           <nav className="hidden md:flex flex-1 justify-center">
-            <div className="flex space-x-8 items-center">
+            <div className="flex space-x-3 items-center">
               {menuItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   className={cn(
-                    'text-sm font-medium transition-all duration-200 hover:text-primary relative py-2',
+                    'text-sm font-medium transition-all duration-200 hover:text-primary relative py-1 px-2',
                     activeSection === item.href.slice(1) ? 'text-primary' : 'text-foreground'
                   )}
                   onClick={(e) => {
@@ -117,19 +117,19 @@ const Header: React.FC = () => {
               href="https://linktr.ee/tubeo5866" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#1A1F2C]/90 hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-full px-4 py-2 text-sm font-medium border border-white/10"
+              className="inline-flex items-center gap-1.5 bg-[#1A1F2C]/90 hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-full px-3 py-1.5 text-sm font-medium border border-white/10"
             >
-              <Link size={16} />
+              <Link size={14} />
               Linktree
             </a>
           </div>
           
           <button 
-            className="md:hidden text-foreground p-2 focus:outline-none" 
+            className="md:hidden text-foreground p-1 focus:outline-none" 
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
@@ -139,13 +139,13 @@ const Header: React.FC = () => {
         <div 
           className="fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center md:hidden"
         >
-          <nav className="flex flex-col items-center space-y-8 py-8">
+          <nav className="flex flex-col items-center space-y-6 py-6">
             {menuItems.map((item, index) => (
               <a
                 key={item.label}
                 href={item.href}
                 className={cn(
-                  'text-2xl font-medium transition-all duration-300 hover:text-primary',
+                  'text-xl font-medium transition-all duration-300 hover:text-primary',
                   activeSection === item.href.slice(1) ? 'text-primary font-semibold' : 'text-foreground'
                 )}
                 style={{ transitionDelay: `${index * 50}ms` }}
@@ -163,9 +163,9 @@ const Header: React.FC = () => {
               href="https://linktr.ee/tubeo5866" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#1A1F2C]/90 hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-full px-5 py-2 text-lg font-medium border border-white/10 mt-4"
+              className="inline-flex items-center gap-2 bg-[#1A1F2C]/90 hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-full px-4 py-2 text-lg font-medium border border-white/10 mt-3"
             >
-              <Link size={20} />
+              <Link size={18} />
               Linktree
             </a>
           </nav>

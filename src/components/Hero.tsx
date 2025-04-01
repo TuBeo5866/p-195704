@@ -28,16 +28,15 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      {/* Simplified circle background */}
-      <div 
-        className="absolute w-[500px] h-[500px] rounded-full bg-primary/5"
-        style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-      />
+      {/* Circle background with centered text */}
+      <div className="absolute w-[500px] h-[500px] rounded-full bg-primary/5 flex items-center justify-center">
+        <p className="pill text-2xl">👋 Hi, I'm TuBeo5866</p>
+      </div>
       
       <div className="section-container flex items-center justify-center relative z-10">
-        <div className="flex flex-col space-y-6 justify-center max-w-2xl text-center">
+        <div className="flex flex-col space-y-12 justify-center max-w-2xl text-center"> {/* Increased space-y from 6 to 12 */}
           {/* Logo Image */}
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center">
             <img 
               src="/lovable-uploads/95074087-2854-4712-8cd7-00d21e8268fd.png" 
               alt="Logo" 
@@ -46,7 +45,6 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="space-y-1">
-            <p className="pill text-2xl">👋 Hi, I'm TuBeo5866</p>
             <h2 className="heading-md text-muted-foreground">
               <AnimatedText 
                 text="Designer & Developer"

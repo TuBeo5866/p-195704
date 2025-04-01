@@ -40,13 +40,13 @@ const Hero: React.FC = () => {
           <div className="flex justify-center mb-4">
             <img 
               src="/lovable-uploads/95074087-2854-4712-8cd7-00d21e8268fd.png" 
-              alt="5866 Logo" 
+              alt="Logo" 
               className="h-60 w-auto animate-fade-in" // Changed from h-24 to h-60 (250% increase)
             />
           </div>
           
           <div className="space-y-1">
-            <p className="pill text-2xl">👋 Hi, I'm TuBeo 5866</p>
+            <p className="pill text-2xl">👋 Hi, I'm TuBeo5866</p>
             <h1 className="heading-xl">
               <AnimatedText 
                 text="TuBeo5866"

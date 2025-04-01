@@ -82,7 +82,7 @@ const Header: React.FC = () => {
           >
             <img 
               src="/lovable-uploads/95074087-2854-4712-8cd7-00d21e8268fd.png" 
-              alt="5866 Logo" 
+              alt="Logo" 
               className="h-8 w-auto"
             />
             <span className="text-sm font-medium">TuBeo5866</span>

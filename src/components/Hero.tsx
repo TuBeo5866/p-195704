@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
                 delayStart={400}
                 staggerDelay={30}
                 el="span"
-                className="tracking-[2px]"
+                className="tracking-[1px]"
               />
             </h2>
           </div>

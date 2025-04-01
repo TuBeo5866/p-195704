@@ -36,26 +36,17 @@ const Hero: React.FC = () => {
       
       <div className="section-container flex items-center justify-center relative z-10">
         <div className="flex flex-col space-y-6 justify-center max-w-2xl text-center">
-          {/* Logo Image - increased to 250% of original size */}
+          {/* Logo Image */}
           <div className="flex justify-center mb-4">
             <img 
               src="/lovable-uploads/95074087-2854-4712-8cd7-00d21e8268fd.png" 
               alt="Logo" 
-              className="h-60 w-auto animate-fade-in" // Changed from h-24 to h-60 (250% increase)
+              className="h-60 w-auto animate-fade-in"
             />
           </div>
           
           <div className="space-y-1">
             <p className="pill text-2xl">👋 Hi, I'm TuBeo5866</p>
-            <h1 className="heading-xl">
-              <AnimatedText 
-                text="TuBeo5866"
-                animationType="fade"
-                delayStart={300}
-                el="span"
-                className="text-gradient inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70"
-              />
-            </h1>
             <h2 className="heading-md text-muted-foreground">
               <AnimatedText 
                 text="Designer & Developer"

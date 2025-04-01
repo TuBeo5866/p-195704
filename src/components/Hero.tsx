@@ -46,10 +46,10 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="space-y-1">
-            <p className="pill text-2xl">👋 Hi, I'm 5866</p>
+            <p className="pill text-2xl">👋 Hi, I'm TuBeo 5866</p>
             <h1 className="heading-xl">
               <AnimatedText 
-                text="Your Name"
+                text="TuBeo5866"
                 animationType="fade"
                 delayStart={300}
                 el="span"

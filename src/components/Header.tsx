@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X, Link } from 'lucide-react';
@@ -17,14 +16,12 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only update state when crossing the threshold
       const shouldBeScrolled = window.scrollY > 20;
       if (isScrolled !== shouldBeScrolled) {
         setIsScrolled(shouldBeScrolled);
       }
       
-      // Less frequent section detection
-      if (window.scrollY % 5 === 0) { // Only check every 5px of scroll
+      if (window.scrollY % 5 === 0) {
         const sections = document.querySelectorAll('section[id]');
         const scrollPosition = window.pageYOffset + 300;
         
@@ -50,7 +47,6 @@ const Header: React.FC = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
 
   const handleMenuItemClick = (href: string) => {
@@ -88,7 +84,6 @@ const Header: React.FC = () => {
             <span className="text-sm font-medium">TuBeo5866</span>
           </a>
           
-          {/* Centered Navigation */}
           <nav className="hidden md:flex flex-1 justify-center">
             <div className="flex space-x-3 items-center">
               {menuItems.map((item) => (
@@ -116,7 +111,6 @@ const Header: React.FC = () => {
             </div>
           </nav>
           
-          {/* Linktree Button */}
           <div className="hidden md:block">
             <a 
               href="https://linktr.ee/tubeo5866" 
@@ -139,75 +133,43 @@ const Header: React.FC = () => {
         </div>
       </div>
       
-      {/* Improved Mobile Menu */}
       {isMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col md:hidden z-50"
-        >
-          <div className="flex justify-between items-center p-5 border-b border-white/10">
-            <a 
-              href="#home" 
-              className="hover:opacity-80 transition-opacity flex items-center gap-2"
-              onClick={(e) => {
-                e.preventDefault();
-                handleMenuItemClick('#home');
-              }}
-            >
-              <img 
-                src="/lovable-uploads/95074087-2854-4712-8cd7-00d21e8268fd.png" 
-                alt="Logo" 
-                className="h-8 w-auto"
-              />
-              <span className="font-medium">TuBeo5866</span>
-            </a>
-            
-            <button
-              className="text-foreground p-2 rounded-full hover:bg-white/10 focus:outline-none"
-              onClick={toggleMenu}
-              aria-label="Close menu"
-            >
-              <X size={24} />
-            </button>
-          </div>
-          
-          <nav className="flex flex-col items-center justify-center flex-1 p-5">
-            <div className="flex flex-col items-center gap-8 py-8 w-full">
+        <div className="absolute top-16 left-0 right-0 px-4 md:hidden z-50">
+          <div className="bg-[#1A1F2C]/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg overflow-hidden mx-auto max-w-xs">
+            <div className="flex flex-col">
               {menuItems.map((item, index) => (
                 <a
                   key={item.label}
                   href={item.href}
                   className={cn(
-                    'text-2xl font-medium transition-all duration-300 hover:text-primary relative py-2 px-4 w-full text-center',
+                    'px-5 py-3 text-center transition-colors hover:bg-white/5',
                     activeSection === item.href.slice(1) ? 'text-primary' : 'text-foreground'
                   )}
-                  style={{ transitionDelay: `${index * 50}ms` }}
                   onClick={(e) => {
                     e.preventDefault();
                     handleMenuItemClick(item.href);
                   }}
                 >
                   {item.label}
-                  <span 
-                    className={cn(
-                      'absolute bottom-0 left-1/2 w-16 -translate-x-1/2 h-[2px] transition-all duration-300 transform', 
-                      activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
-                    )}
-                  />
+                  {activeSection === item.href.slice(1) && (
+                    <div className="w-10 h-0.5 bg-primary mx-auto mt-1.5" />
+                  )}
                 </a>
               ))}
+              
+              <div className="p-4">
+                <a 
+                  href="https://linktr.ee/tubeo5866" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground transition-colors duration-200 rounded-lg w-full py-2.5 text-sm font-medium"
+                >
+                  <Link size={16} />
+                  Linktree
+                </a>
+              </div>
             </div>
-            
-            {/* Mobile Linktree Button */}
-            <a 
-              href="https://linktr.ee/tubeo5866" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground transition-colors duration-200 rounded-full px-8 py-3 text-base font-medium"
-            >
-              <Link size={18} />
-              Linktree
-            </a>
-          </nav>
+          </div>
         </div>
       )}
     </header>

@@ -139,36 +139,70 @@ const Header: React.FC = () => {
         </div>
       </div>
       
-      {/* Mobile Menu */}
+      {/* Improved Mobile Menu */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center md:hidden"
+          className="fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col md:hidden z-50"
         >
-          <nav className="flex flex-col items-center space-y-6 py-6">
-            {menuItems.map((item, index) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  'text-xl font-medium transition-all duration-300 hover:text-primary',
-                  activeSection === item.href.slice(1) ? 'text-primary font-semibold' : 'text-foreground'
-                )}
-                style={{ transitionDelay: `${index * 50}ms` }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleMenuItemClick(item.href);
-                }}
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className="flex justify-between items-center p-5 border-b border-white/10">
+            <a 
+              href="#home" 
+              className="hover:opacity-80 transition-opacity flex items-center gap-2"
+              onClick={(e) => {
+                e.preventDefault();
+                handleMenuItemClick('#home');
+              }}
+            >
+              <img 
+                src="/lovable-uploads/95074087-2854-4712-8cd7-00d21e8268fd.png" 
+                alt="Logo" 
+                className="h-8 w-auto"
+              />
+              <span className="font-medium">TuBeo5866</span>
+            </a>
+            
+            <button
+              className="text-foreground p-2 rounded-full hover:bg-white/10 focus:outline-none"
+              onClick={toggleMenu}
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          
+          <nav className="flex flex-col items-center justify-center flex-1 p-5">
+            <div className="flex flex-col items-center gap-8 py-8 w-full">
+              {menuItems.map((item, index) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={cn(
+                    'text-2xl font-medium transition-all duration-300 hover:text-primary relative py-2 px-4 w-full text-center',
+                    activeSection === item.href.slice(1) ? 'text-primary' : 'text-foreground'
+                  )}
+                  style={{ transitionDelay: `${index * 50}ms` }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleMenuItemClick(item.href);
+                  }}
+                >
+                  {item.label}
+                  <span 
+                    className={cn(
+                      'absolute bottom-0 left-1/2 w-16 -translate-x-1/2 h-[2px] transition-all duration-300 transform', 
+                      activeSection === item.href.slice(1) ? 'bg-primary scale-x-100' : 'bg-muted-foreground/30 scale-x-0'
+                    )}
+                  />
+                </a>
+              ))}
+            </div>
             
             {/* Mobile Linktree Button */}
             <a 
               href="https://linktr.ee/tubeo5866" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#1A1F2C]/90 hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-full px-4 py-2 text-lg font-medium border border-white/10 mt-3"
+              className="mt-8 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground transition-colors duration-200 rounded-full px-8 py-3 text-base font-medium"
             >
               <Link size={18} />
               Linktree

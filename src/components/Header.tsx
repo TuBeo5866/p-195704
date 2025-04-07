@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X, Link } from 'lucide-react';
@@ -125,24 +124,11 @@ const Header: React.FC = () => {
           </div>
           
           <button 
-            className="md:hidden text-foreground p-1 focus:outline-none relative h-10 w-10 flex items-center justify-center overflow-hidden" 
+            className="md:hidden text-foreground p-1 focus:outline-none" 
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            <Menu 
-              size={22} 
-              className={cn(
-                "absolute transition-all duration-300 ease-in-out",
-                isMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"
-              )} 
-            />
-            <X 
-              size={22} 
-              className={cn(
-                "absolute transition-all duration-300 ease-in-out",
-                isMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"
-              )} 
-            />
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>

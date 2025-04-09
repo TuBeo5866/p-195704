@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X, Link } from 'lucide-react';
@@ -135,7 +136,7 @@ const Header: React.FC = () => {
       
       {isMenuOpen && (
         <div className="absolute top-16 left-0 right-0 px-4 md:hidden z-50">
-          <div className="neo-blur border border-white/10 rounded-xl shadow-lg overflow-hidden mx-auto max-w-xs">
+          <div className="acrylic border border-white/10 rounded-xl shadow-lg overflow-hidden mx-auto max-w-xs">
             <div className="flex flex-col">
               {menuItems.map((item, index) => (
                 <a
